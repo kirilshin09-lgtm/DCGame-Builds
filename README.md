@@ -4,4 +4,4 @@
 
 **Играть:** https://kirilshin09-lgtm.github.io/DCGame-Builds/
 
-Текущая версия — dev-билд (без сжатия). Исходники: https://github.com/kirilshin09-lgtm/DCGame
+Текущая версия — 1.2 (релизный билд). Исходники: https://github.com/kirilshin09-lgtm/DCGame
