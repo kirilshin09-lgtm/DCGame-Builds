@@ -106,9 +106,9 @@
       var buildUrl = "Build";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/DCGAME1.2.data.unityweb",
-        frameworkUrl: buildUrl + "/DCGAME1.2.framework.js.unityweb",
-        codeUrl: buildUrl + "/DCGAME1.2.wasm.unityweb",
+        dataUrl: buildUrl + "/DCGAME1.3.data.unityweb",
+        frameworkUrl: buildUrl + "/DCGAME1.3.framework.js.unityweb",
+        codeUrl: buildUrl + "/DCGAME1.3.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "DCGame",
@@ -122,7 +122,7 @@
       config.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
       var script = document.createElement("script");
-      script.src = buildUrl + "/DCGAME1.2.loader.js";
+      script.src = buildUrl + "/DCGAME1.3.loader.js";
       script.onload = function () {
         createUnityInstance(canvas, config, function (progress) {
           document.querySelector("#bar > div").style.width = (100 * progress) + "%";
