@@ -88,6 +88,7 @@
       </div>
     </div>
 
+    <script src="browser-lifecycle.js"></script>
     <script>
       var canvas = document.querySelector("#unity-canvas");
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -106,9 +107,9 @@
       var buildUrl = "Build";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/DCGAME-20260923.data.unityweb",
-        frameworkUrl: buildUrl + "/DCGAME-20260923.framework.js.unityweb",
-        codeUrl: buildUrl + "/DCGAME-20260923.wasm.unityweb",
+        dataUrl: buildUrl + "/DCGAME-20261002.data.unityweb",
+        frameworkUrl: buildUrl + "/DCGAME-20261002.framework.js.unityweb",
+        codeUrl: buildUrl + "/DCGAME-20261002.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "DCGame",
@@ -122,11 +123,12 @@
       config.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 
       var script = document.createElement("script");
-      script.src = buildUrl + "/DCGAME-20260923.loader.js";
+      script.src = buildUrl + "/DCGAME-20261002.loader.js";
       script.onload = function () {
         createUnityInstance(canvas, config, function (progress) {
           document.querySelector("#bar > div").style.width = (100 * progress) + "%";
         }).then(function (unityInstance) {
+          window.dcBrowserLifecycle.attach(unityInstance);
           document.querySelector("#loading").classList.add("done");
           document.querySelector("#fs").onclick = function () { unityInstance.SetFullscreen(1); };
         }).catch(function (message) {
